@@ -160,7 +160,7 @@
             return [0.1 * Math.random() + 0.01, -(0.1 * Math.random() + 0.01)];
         };
         var getKey = function(item){
-            return item.name + '-' + item.phone;
+            return item.name;
         };
         var createHTML = function(){
             var html = [ '<ul>' ];
@@ -193,7 +193,7 @@
                 .map(function(m){
                   choosed[getKey(m)] = 1;
                   list[m.index].style.color = color;
-                  return m.name + '<br/>' + m.phone;
+                  return m.name;
                 });
             localStorage.setItem('choosed', JSON.stringify(choosed));
             return ret;
@@ -206,10 +206,10 @@
         new Vue({
             el: '#tools',
             data: {
-                selected: 30,
+                selected: 3,
                 running: false,
                 btns: [
-                    30, 10, 5, 2, 1
+                    10, 5, 3, 2, 1
                 ]
             },
             ready: function(){
