@@ -58,6 +58,7 @@ function SortList(l, f) {
   return nl;
 }
 function Shuffle(a) {
+  Math.seedrandom();  
   var i = a.length-1, t, p;
   while(i) {
     p = ~~(Math.random()*i);
